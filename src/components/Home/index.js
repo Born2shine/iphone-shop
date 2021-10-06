@@ -1,23 +1,29 @@
+import { useState, useEffect } from "react"
 import { useGlobalContext } from "../../provider/context"
 import { FiMenu } from "react-icons/fi"
-import { FaShoppingCart } from "react-icons/fa"
+// import { FaShoppingCart } from "react-icons/fa"
 
 const Home = () => {
     const { iphones } = useGlobalContext()
-    // console.log(iphones)
+    const [availablePhone, setAvailablePhone] = useState(iphones)
+    useEffect(() => {
+        const newData = iphones.filter((f) => f.lowestAsk !== undefined)
+        setAvailablePhone(newData)
+    }, [iphones])
+
     return (
         <section className="main">
             <header className="banner">
             <nav>
                 <div className="menu"> <FiMenu/> </div>
                 <div className="links">
-                    <a href="#">Log in</a>
-                    <a href="#" className="signup">Sign up</a>
+                    <a href="#a">Log in</a>
+                    <a href="#a" className="signup">Sign up</a>
                 </div>
             </nav>
-                <h1><FaShoppingCart/> TomShop</h1>
+                {/* <h1><FaShoppingCart/> TomShop</h1> */}
                 <div className="content">
-                    <h2 className="title">Mobile Phones & Tablets</h2>
+                    <h2 className="title">Mobile Phones &#38; Tablets</h2>
                     <div className="search-form">
                         <input type="text" placeholder="Search by name, grade, and storageSize" />
                         <button className="btn">Search</button>
@@ -35,8 +41,8 @@ const Home = () => {
                         </div>
                 </aside>
                 <aside className="iphones">
-                   { iphones &&
-                       iphones.map(({_id, name, imgUrl, lowestAsk}) => {
+                   { availablePhone &&
+                       availablePhone.map(({_id, name, imgUrl, lowestAsk}) => {
 
                         //    const { price, storageSize, carrier, grade } = lowestAsk
                            return (
@@ -53,7 +59,7 @@ const Home = () => {
                                     <span className="carrier"> {lowestAsk && lowestAsk.carrier}</span>
                                 </div>
                                <div className="add-to-cart">
-                                 <a href="#" className="add-btn">Add To Cart</a>
+                                 <a href="#a" className="add-btn">Add To Cart</a>
                                </div>
                             </div>
                            )
