@@ -5,6 +5,22 @@ import axios from "axios";
 const AppContext = React.createContext();
 const AppProvider = ({children}) => {
     const [iphones, setiPhones] = useState(null);
+    const [fetching, setFetching] = useState(true)
+    const [filterData, setFilterData] = useState({
+        'min': '',
+        'max': '', 
+    })
+
+    const handleChange = (e) => {
+        let {name, value} = e.target
+        setFilterData(() => {
+            return {...filterData, [name]: parseInt(value)}
+        })
+    }
+
+    const filterEmptyData = () => {
+        return iphones.filter((f) => f.lowestAsk !== undefined)
+    }
     
     const getIphoneData = async () => {
         try {
@@ -13,6 +29,7 @@ const AppProvider = ({children}) => {
             const sortedData = data.filter(f => f.name.includes("iPhone"))
             console.log(sortedData)
             setiPhones(sortedData)
+            setFetching(false)
         } catch (error) {
             console.log(error.message)
         }
@@ -25,6 +42,10 @@ const AppProvider = ({children}) => {
     return (
         <AppContext.Provider value={{
             iphones,
+            filterData,
+            fetching,
+            handleChange,
+            filterEmptyData
         }}>
             {children}
         </AppContext.Provider>

@@ -115,6 +115,10 @@ a {
   cursor: pointer;
 }
 
+.main .main-content {
+  position: relative;
+}
+
 .main .main-content .filter-wrapper {
   background: #eef2f4;
   padding: 10px;
@@ -149,6 +153,11 @@ a {
   border-radius: 3px;
   letter-spacing: 1px;
   cursor: pointer;
+}
+
+.main .main-content .loader {
+  text-align: center;
+  margin-top: 50px;
 }
 
 .main .main-content .iphones {

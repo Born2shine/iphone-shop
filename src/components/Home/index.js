@@ -1,15 +1,40 @@
 import { useState, useEffect } from "react"
 import { useGlobalContext } from "../../provider/context"
 import { FiMenu } from "react-icons/fi"
+import loader from "../../assets/images/loader.gif"
 // import { FaShoppingCart } from "react-icons/fa"
 
 const Home = () => {
-    const { iphones } = useGlobalContext()
+    const { iphones, filterData, handleChange, filterEmptyData, fetching } = useGlobalContext()
     const [availablePhone, setAvailablePhone] = useState(iphones)
+    const [filtering, setFiltering] = useState(false)
+    const [sorting, setSorting] = useState(false)
+    
+    const filterByPrice = () => {
+        setSorting(true)
+        setFiltering(true)
+    } 
+
     useEffect(() => {
-        const newData = iphones.filter((f) => f.lowestAsk !== undefined)
-        setAvailablePhone(newData)
+        if (iphones) {
+            const newData = filterEmptyData()
+            setAvailablePhone(newData)
+        }
+        
     }, [iphones])
+
+    useEffect(() => {
+        if(filtering){
+            let data = filterEmptyData().filter(f => f.lowestAsk.price >= filterData.min)
+            if(filterData.max){
+                data = data.filter(f => f.lowestAsk.price <= filterData.max)
+            }
+            console.log(data)
+            setAvailablePhone(data)
+            setFiltering(false)
+            setSorting(false)
+        }
+    }, [filtering])
 
     return (
         <section className="main">
@@ -35,13 +60,29 @@ const Home = () => {
                 <aside className="filter-wrapper">
                         <div className="filter">
                             <label>Price</label>
-                            <input type="number" placeholder="Min"/>
-                            <input type="number" placeholder="Max"/>
-                            <button className="btn-filter">Filter</button>
+                            <input type="number" 
+                                name="min" 
+                                value={filterData.min} 
+                                onChange={(e) => handleChange(e)} 
+                                placeholder="Min"
+                            />
+                            <input type="number" 
+                                name="max" value={filterData.max} 
+                                onChange={(e) => handleChange(e)} 
+                                placeholder="Max"
+                            />
+                            <button onClick={filterByPrice} className="btn-filter">Filter</button>
                         </div>
                 </aside>
+                {
+                    (fetching || sorting) && (
+                        <div className="loader">
+                            <img src={loader} alt="loader" />
+                        </div>
+                    )
+                }
                 <aside className="iphones">
-                   { availablePhone &&
+                   { !fetching && availablePhone &&
                        availablePhone.map(({_id, name, imgUrl, lowestAsk}) => {
 
                         //    const { price, storageSize, carrier, grade } = lowestAsk
