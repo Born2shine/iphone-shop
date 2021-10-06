@@ -45,7 +45,7 @@ const Home = () => {
                                     <img src={imgUrl} alt={name} />
                                 </div>
                                 <div className="details">
-                                    <p className="name"> { name } </p>
+                                    <p className="name"> { name }  </p>
                                     <ul>
                                         <li className="size"> {lowestAsk && lowestAsk.storageSize} </li>
                                         <li className="price">&#8358;{lowestAsk && lowestAsk.price}</li>

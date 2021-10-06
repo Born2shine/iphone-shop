@@ -97,9 +97,10 @@ a{
                     padding: 10px;
                     width: 100px;
                     border: none;
-                    outline: 1px solid $clr-midnight;
+                    outline: 1px solid grey;
                     font-family: inherit;
                     border-radius: 3px;
+                    background: inherit;
                 }
                 .btn-filter{
                     border: none;
@@ -138,7 +139,7 @@ a{
                         li{
                             list-style: none;
                             line-height: 2;
-                            color: hotpink;
+                            color: darken($clr-beige, 5%);
                         }
                         .price{
                             color: rgb(24, 202, 24);

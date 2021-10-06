@@ -134,9 +134,10 @@ a {
   padding: 10px;
   width: 100px;
   border: none;
-  outline: 1px solid #343A40;
+  outline: 1px solid grey;
   font-family: inherit;
   border-radius: 3px;
+  background: inherit;
 }
 
 .main .main-content .filter-wrapper .filter .btn-filter {
@@ -191,7 +192,7 @@ a {
 .main .main-content .iphones .single-phone .details ul li {
   list-style: none;
   line-height: 2;
-  color: hotpink;
+  color: #fabbb9;
 }
 
 .main .main-content .iphones .single-phone .details ul .price {
