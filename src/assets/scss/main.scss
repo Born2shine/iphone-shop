@@ -3,4 +3,175 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    background: $clr-white;
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+.main{
+    .banner{
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/banner-2.jpg") center/cover no-repeat;
+        min-height: 75vh;
+        position: relative;
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background: $clr-midnight;
+            padding: 8px;
+            .menu{
+                color: $clr-off-white;
+                font-size: 30px;
+            }
+            .links{
+                a{
+                    color: $clr-off-white;
+                    margin: 5px;
+                    font-size: 14px;
+                }
+                .signup{
+                    border: 1px solid grey;
+                    padding: 4px 10px;
+                }
+            }
+        }
+        h1{
+            color: $clr-off-white;
+            padding: 10px;
+            font-weight: 400;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        .content{
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            .title{
+                color: $clr-off-white;
+                font-weight: 300;
+            }
+            .search-form{
+                margin-top: 10px;
+                input{
+                    width: 90vw;
+                    padding: 1rem;
+                    font-size: 1rem;
+                    font-family: inherit;
+                    border: none;
+                    &::placeholder{
+                        font-size: 14px;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                .btn{
+                    padding: 1rem;
+                    border: none;
+                    margin: 10px 0;
+                    background: $clr-peach;
+                    color: $clr-white;
+                    font-family: inherit;
+                    font-size: 1rem;
+                    width: 90vw;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
+    .main-content{
+        .filter-wrapper{
+            background: #eef2f4;
+            padding: 10px;
+            .filter{
+                margin-top: 5px;
+                margin-bottom: 10px;
+                label{
+                    display: block;
+                }
+                input{
+                    margin-right: 10px;
+                    padding: 10px;
+                    width: 100px;
+                    border: none;
+                    outline: 1px solid $clr-midnight;
+                    font-family: inherit;
+                    border-radius: 3px;
+                }
+                .btn-filter{
+                    border: none;
+                    padding: 13px 40px;
+                    background: $clr-midnight;
+                    color: $clr-white;
+                    font-size: 15px;
+                    border-radius: 3px;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .iphones{
+            padding: 15px;
+            .single-phone{
+                box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.2);
+                margin-bottom: 20px;
+                .phone-img{
+                    background: $clr-warm;
+                    text-align: center;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    padding: 10px;
+                   img{
+                    width: 50%;
+                    height: 200px;
+                    object-fit: cover;
+                   }
+                }
+                .details{
+                    padding: 20px;
+                    ul{
+                        display: flex;
+                        justify-content: space-between;
+                        li{
+                            list-style: none;
+                            line-height: 2;
+                            color: hotpink;
+                        }
+                        .price{
+                            color: rgb(24, 202, 24);
+                           
+                        }
+                    }
+                    .carrier{
+                        display: inline-block;
+                        margin-top: 10px;
+                        color: $clr-midnight;
+                        background: $clr-off-white;
+                        padding: 4px 15px;
+                    }
+                }
+                .add-to-cart{
+                    text-align: right;
+                    margin: 10px;
+                    .add-btn{
+                        padding: 12px;
+                        background: $clr-red;
+                        width: 100%;
+                        cursor: pointer;
+                        color: $clr-off-white;
+                        text-align: center;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        &:hover{
+                            background: lighten($clr-red, 10%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }

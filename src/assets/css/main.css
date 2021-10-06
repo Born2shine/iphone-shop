@@ -8,4 +8,220 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background: #FFF;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.main .banner {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../images/banner-2.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/banner-2.jpg") center/cover no-repeat;
+  min-height: 75vh;
+  position: relative;
+}
+
+.main .banner nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #343A40;
+  padding: 8px;
+}
+
+.main .banner nav .menu {
+  color: #F6F8F9;
+  font-size: 30px;
+}
+
+.main .banner nav .links a {
+  color: #F6F8F9;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.main .banner nav .links .signup {
+  border: 1px solid grey;
+  padding: 4px 10px;
+}
+
+.main .banner h1 {
+  color: #F6F8F9;
+  padding: 10px;
+  font-weight: 400;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.main .banner .content {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.main .banner .content .title {
+  color: #F6F8F9;
+  font-weight: 300;
+}
+
+.main .banner .content .search-form {
+  margin-top: 10px;
+}
+
+.main .banner .content .search-form input {
+  width: 90vw;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+}
+
+.main .banner .content .search-form input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.main .banner .content .search-form input:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.main .banner .content .search-form input::-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.main .banner .content .search-form input::placeholder {
+  font-size: 14px;
+}
+
+.main .banner .content .search-form input:focus {
+  outline: none;
+}
+
+.main .banner .content .search-form .btn {
+  padding: 1rem;
+  border: none;
+  margin: 10px 0;
+  background: #FF5C58;
+  color: #FFF;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 90vw;
+  cursor: pointer;
+}
+
+.main .main-content .filter-wrapper {
+  background: #eef2f4;
+  padding: 10px;
+}
+
+.main .main-content .filter-wrapper .filter {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.main .main-content .filter-wrapper .filter label {
+  display: block;
+}
+
+.main .main-content .filter-wrapper .filter input {
+  margin-right: 10px;
+  padding: 10px;
+  width: 100px;
+  border: none;
+  outline: 1px solid #343A40;
+  font-family: inherit;
+  border-radius: 3px;
+}
+
+.main .main-content .filter-wrapper .filter .btn-filter {
+  border: none;
+  padding: 13px 40px;
+  background: #343A40;
+  color: #FFF;
+  font-size: 15px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.main .main-content .iphones {
+  padding: 15px;
+}
+
+.main .main-content .iphones .single-phone {
+  -webkit-box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.main .main-content .iphones .single-phone .phone-img {
+  background: #FFEDD3;
+  text-align: center;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 10px;
+}
+
+.main .main-content .iphones .single-phone .phone-img img {
+  width: 50%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main .main-content .iphones .single-phone .details {
+  padding: 20px;
+}
+
+.main .main-content .iphones .single-phone .details ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .main-content .iphones .single-phone .details ul li {
+  list-style: none;
+  line-height: 2;
+  color: hotpink;
+}
+
+.main .main-content .iphones .single-phone .details ul .price {
+  color: #18ca18;
+}
+
+.main .main-content .iphones .single-phone .details .carrier {
+  display: inline-block;
+  margin-top: 10px;
+  color: #343A40;
+  background: #F6F8F9;
+  padding: 4px 15px;
+}
+
+.main .main-content .iphones .single-phone .add-to-cart {
+  text-align: right;
+  margin: 10px;
+}
+
+.main .main-content .iphones .single-phone .add-to-cart .add-btn {
+  padding: 12px;
+  background: #FF5C58;
+  width: 100%;
+  cursor: pointer;
+  color: #F6F8F9;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.main .main-content .iphones .single-phone .add-to-cart .add-btn:hover {
+  background: #ff8e8b;
 }
