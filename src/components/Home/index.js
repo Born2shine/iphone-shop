@@ -78,7 +78,7 @@ const Home = () => {
                         <input type="text" 
                         value={sortData}
                         onChange={(e) => setSortData(e.target.value)} 
-                        placeholder="Search by name, grade, and storageSize" />
+                        placeholder="Search by name, grade, and storageSize (e.g iPhone XR, b2, 64gB)" />
                         <button onClick={handleSubmit} className="btn">Search</button>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ const Home = () => {
                 }
                 <aside className="iphones">
                    { !fetching && availablePhone &&
-                       availablePhone.map(({_id, name, imgUrl, lowestAsk}) => {
+                       availablePhone.map(({_id, name, imgUrl, quantity, lowestAsk}) => {
 
                         //    const { price, storageSize, carrier, grade } = lowestAsk
                            return (
@@ -123,7 +123,7 @@ const Home = () => {
                                     <p className="name"> { name }  </p>
                                     <ul>
                                         <li className="size"> {lowestAsk && lowestAsk.storageSize} </li>
-                                        <li className="price">&#8358;{lowestAsk && lowestAsk.price}</li>
+                                        <li className="price">&#36;{lowestAsk && lowestAsk.price}</li>
                                     </ul>
                                     <span className="carrier"> {lowestAsk && lowestAsk.carrier}</span>
                                 </div>
