@@ -23,6 +23,10 @@ a{
             .menu{
                 color: $clr-off-white;
                 font-size: 30px;
+                .logo{
+                    display: none;
+                    font-size: 18px;
+                }
             }
             .links{
                 a{
@@ -85,7 +89,7 @@ a{
     .main-content{
         position: relative;
         .filter-wrapper{
-            background: #eef2f4;
+            background: #ede8d1;
             padding: 10px;
             .filter{
                 margin-top: 5px;
@@ -98,10 +102,13 @@ a{
                     padding: 10px;
                     width: 100px;
                     border: none;
-                    outline: 1px solid grey;
+                    outline: 1px solid #bbb6a2;
                     font-family: inherit;
                     border-radius: 3px;
                     background: inherit;
+                    &::placeholder{
+                        color: #bbb6a2;
+                    }
                 }
                 .btn-filter{
                     border: none;
@@ -182,6 +189,10 @@ a{
                 }
             }
         }
+        .no-record{
+            color: #ed9844;
+            text-align: center;
+        }
     }
     
 }
@@ -219,6 +230,18 @@ a{
 
 @media screen and (min-width: 920px) {
     .main{
+        .banner{
+            nav{
+                .menu{
+                    .logo-icon{
+                        display: none;
+                    }
+                    .logo{
+                        display: block;
+                    }
+                }
+            }
+        }
         .main-content{
             .filter-wrapper{
                 .filter{
@@ -227,6 +250,11 @@ a{
                         display: block;
                         margin: 10px 0;
                         width: 100%;
+                        padding: 6px;
+                    }
+                    .btn-filter{
+                        width: 100%;
+                        padding: 10px;
                     }
                 }
             }
@@ -261,8 +289,35 @@ a{
             .iphones{
                padding: 30px;
                display: grid;
-               grid-template-columns: 1fr 1fr 1fr;
+               grid-template-columns: repeat(4, 1fr);
                gap: 1.4rem;
+               .single-phone{
+                   .phone-img{
+                       img{
+                           width: 40%;
+                           height: 120px;
+                       }
+                   }
+                   .details{
+                       .name{
+                           font-size: 14px;
+                       }
+                       ul{
+                           .size,.price{
+                               font-size: 14px;
+                           }
+                        }
+                        .carrier{
+                            font-size: 14px;
+                        }
+                    }
+                    .add-to-cart{
+                        .add-btn{
+                            padding: 10px;
+                            font-size: 14px;
+                        }
+                    }
+               }
             }
         }
     }

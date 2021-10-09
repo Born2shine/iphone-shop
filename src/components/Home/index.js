@@ -9,11 +9,33 @@ const Home = () => {
     const [availablePhone, setAvailablePhone] = useState(iphones)
     const [filtering, setFiltering] = useState(false)
     const [sorting, setSorting] = useState(false)
+    const [sortData, setSortData] = useState('')
     
     const filterByPrice = () => {
         setSorting(true)
         setFiltering(true)
-    } 
+    }
+
+    const handleSubmit = () => {
+        let newData = []
+        let sortArr = sortData.split(',')
+        const IPHONES = filterEmptyData()
+        IPHONES.map((d) => {
+            for (let i = 0; i < sortArr.length; i++) {
+                if(d.name.toLowerCase().includes(sortArr[i].toLowerCase())){
+                    newData.push(d)
+                } 
+                else if(d.lowestAsk.grade.toLowerCase() == sortArr[i].toLowerCase()){
+                    newData.push(d)
+                }else if(d.lowestAsk.storageSize.toLowerCase() == sortArr[i].toLowerCase()){
+                    newData.push(d)
+                }               
+            }
+            return d
+        })
+        setAvailablePhone(newData)
+        console.log(newData)
+    }
 
     useEffect(() => {
         if (iphones) {
@@ -40,7 +62,10 @@ const Home = () => {
         <section className="main">
             <header className="banner">
             <nav>
-                <div className="menu"> <FiMenu/> </div>
+                <div className="menu"> 
+                <span className="logo">LOGO</span>
+                <span className="logo-icon"> <FiMenu/> </span> 
+                 </div>
                 <div className="links">
                     <a href="#a">Log in</a>
                     <a href="#a" className="signup">Sign up</a>
@@ -50,8 +75,11 @@ const Home = () => {
                 <div className="content">
                     <h2 className="title">Mobile Phones &#38; Tablets</h2>
                     <div className="search-form">
-                        <input type="text" placeholder="Search by name, grade, and storageSize" />
-                        <button className="btn">Search</button>
+                        <input type="text" 
+                        value={sortData}
+                        onChange={(e) => setSortData(e.target.value)} 
+                        placeholder="Search by name, grade, and storageSize" />
+                        <button onClick={handleSubmit} className="btn">Search</button>
                     </div>
                 </div>
             </header>
@@ -106,7 +134,16 @@ const Home = () => {
                            )
                        })
                    }
+
+                {
+                    !fetching && (availablePhone.length === 0) && (
+                        <aside className="no-record">
+                            No Record Found
+                        </aside>
+                    )
+                }
                 </aside>
+               
             </section>
            
         </section>

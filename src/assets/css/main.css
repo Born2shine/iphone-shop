@@ -39,6 +39,11 @@ a {
   font-size: 30px;
 }
 
+.main .banner nav .menu .logo {
+  display: none;
+  font-size: 18px;
+}
+
 .main .banner nav .links a {
   color: #F6F8F9;
   margin: 5px;
@@ -120,7 +125,7 @@ a {
 }
 
 .main .main-content .filter-wrapper {
-  background: #eef2f4;
+  background: #ede8d1;
   padding: 10px;
 }
 
@@ -138,10 +143,26 @@ a {
   padding: 10px;
   width: 100px;
   border: none;
-  outline: 1px solid grey;
+  outline: 1px solid #bbb6a2;
   font-family: inherit;
   border-radius: 3px;
   background: inherit;
+}
+
+.main .main-content .filter-wrapper .filter input::-webkit-input-placeholder {
+  color: #bbb6a2;
+}
+
+.main .main-content .filter-wrapper .filter input:-ms-input-placeholder {
+  color: #bbb6a2;
+}
+
+.main .main-content .filter-wrapper .filter input::-ms-input-placeholder {
+  color: #bbb6a2;
+}
+
+.main .main-content .filter-wrapper .filter input::placeholder {
+  color: #bbb6a2;
 }
 
 .main .main-content .filter-wrapper .filter .btn-filter {
@@ -236,6 +257,11 @@ a {
   background: #ff8e8b;
 }
 
+.main .main-content .no-record {
+  color: #ed9844;
+  text-align: center;
+}
+
 @media screen and (min-width: 560px) {
   .main .banner .content .search-form {
     display: -ms-grid;
@@ -263,6 +289,12 @@ a {
 }
 
 @media screen and (min-width: 920px) {
+  .main .banner nav .menu .logo-icon {
+    display: none;
+  }
+  .main .banner nav .menu .logo {
+    display: block;
+  }
   .main .main-content {
     display: -ms-grid;
     display: grid;
@@ -276,6 +308,11 @@ a {
     display: block;
     margin: 10px 0;
     width: 100%;
+    padding: 6px;
+  }
+  .main .main-content .filter-wrapper .filter .btn-filter {
+    width: 100%;
+    padding: 10px;
   }
   .main .main-content .iphones {
     padding: 30px;
@@ -306,8 +343,25 @@ a {
     padding: 30px;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
     gap: 1.4rem;
+  }
+  .main .main-content .iphones .single-phone .phone-img img {
+    width: 40%;
+    height: 120px;
+  }
+  .main .main-content .iphones .single-phone .details .name {
+    font-size: 14px;
+  }
+  .main .main-content .iphones .single-phone .details ul .size, .main .main-content .iphones .single-phone .details ul .price {
+    font-size: 14px;
+  }
+  .main .main-content .iphones .single-phone .details .carrier {
+    font-size: 14px;
+  }
+  .main .main-content .iphones .single-phone .add-to-cart .add-btn {
+    padding: 10px;
+    font-size: 14px;
   }
 }
