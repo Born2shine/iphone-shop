@@ -31,10 +31,10 @@ const Home = () => {
                     newData.push(d)
                 }               
             }
-            return d
+            // return d
         })
+        setSortData('')
         setAvailablePhone(newData)
-        console.log(newData)
     }
 
     useEffect(() => {
